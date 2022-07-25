@@ -86,13 +86,8 @@ public class UserDaoJDBCImpl implements UserDao {
                 user.setId(rs.getLong("id"));
                 users.add(user);
             }
-            con.commit();
         } catch (SQLException e) {
-            try {
-                con.rollback();
-            } catch (SQLException ex) {
-
-            }
+            e.getMessage();
         }
         return users;
     }
